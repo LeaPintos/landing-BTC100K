@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anillo BTC 100K - Edición Limitada</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #f7931a;
+            --text-color: #fff;
+            --bg-color: #121212;
+            --secondary-bg: #1e1e1e;
+            --border-color: #333;
+            --white-bg: #ffffff;
+            --white-text: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header */
+        header {
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: linear-gradient(135deg, #1e1e1e 0%, #0a0a0a 50%, #1a1a1a 100%);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 0 50px;
+            position: relative;
+            background: linear-gradient(135deg, #1e1e1e 0%, #0a0a0a 50%, #1a1a1a 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(247, 147, 26, 0.1) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -20%;
+            width: 70%;
+            height: 100%;
+            background-image: url('https://z-cdn-media.chatglm.cn/files/da65fbf0-50dd-4663-9db0-249666451511_ANILLO%20SIN%20FONDO%201.png?auth_key=1789776238-9ad54dfd04a84e8ea44c1090677351c9-0-1095e5444f8298ce0bbb35cdc8b70025');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.15;
+            z-index: 1;
+            transform: scale(2.5);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-color);
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: #ccc;
+            position: relative;
+            z-index: 2;
+        }
+
+        .progress-container {
+            width: 80%;
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            height: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: var(--primary-color);
+            border-radius: 10px;
+            width: 65%;
+            position: relative;
+            transition: width 1s ease-in-out;
+        }
+
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .stock-info {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--primary-color);
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary-color) 0%, #e8861a 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(247, 147, 26, 0.4);
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(247, 147, 26, 0.6);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--text-color);
+        }
+
+        /* Whitepaper Section */
+        .whitepaper {
+            background-color: var(--white-bg);
+        }
+
+        .whitepaper-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .whitepaper-text {
+            flex: 1;
+            text-align: center;
+        }
+
+        .whitepaper-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .whitepaper-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .whitepaper-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            width: 80%;
+            max-width: 800px;
+            margin: 40px auto;
+            background: linear-gradient(90deg, #2a2a2a 0%, #1a1a1a 100%);
+            border-radius: 10px;
+            height: 40px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color) 0%, #e8861a 100%);
+            border-radius: 10px;
+            width: 2%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: width 1s ease-in-out;
+            box-shadow: 0 0 20px rgba(247, 147, 26, 0.5);
+        }
+
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.1rem;
+            z-index: 10;
+            width: 100%;
+            text-align: center;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        /* NFT Section */
+        .nft-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 50%, #1a1a1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nft-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 80% 20%, rgba(247, 147, 26, 0.05) 0%, transparent 60%);
+            z-index: 1;
+        }
+
+        .nft-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .nft-description {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+
+        .nft-carousel {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 15px;
+            height: 600px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+        }
+
+        .nft-carousel-container {
+            display: flex;
+            height: 100%;
+            animation: scroll 30s linear infinite;
+        }
+
+        .nft-item {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .nft-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-1000%);
+            }
+        }
+
+        .nft-microcopy {
+            margin-top: 30px;
+            font-style: italic;
+            color: #aaa;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Price Chart */
+        .price-chart-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+
+        .price-chart {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background: linear-gradient(135deg, #151515 0%, #0a0a0a 50%, #151515 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefits::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 70%, rgba(247, 147, 26, 0.05) 0%, transparent 60%);
+            z-index: 1;
+        }
+
+        .benefits-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(247, 147, 26, 0.2);
+            background: linear-gradient(135deg, #2f2f2f 0%, #1f1f1f 100%);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        /* Price Stages Section */
+        .price-stages {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 50%, #1a1a1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-stages::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, rgba(247, 147, 26, 0.05) 0%, transparent 60%);
+            z-index: 1;
+        }
+
+        .price-stages-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .price-stages-description {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+
+        .price-table {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            border-collapse: collapse;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .price-table th, .price-table td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .price-table th {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #e8861a 100%);
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .price-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .price-table tr:nth-child(odd) {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        .price-table tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .price-table tr:hover {
+            background-color: rgba(247, 147, 26, 0.1);
+        }
+
+        .price-bar-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            height: 60px;
+            background-color: #f0f0f0;
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-bar {
+            display: flex;
+            height: 100%;
+        }
+
+        .price-segment {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .price-segment:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .segment-1 {
+            background-color: #f7931a;
+            width: 10%;
+        }
+
+        .segment-2 {
+            background-color: #e8861a;
+            width: 20%;
+        }
+
+        .segment-3 {
+            background-color: #d9791a;
+            width: 20%;
+        }
+
+        .segment-4 {
+            background-color: #ca6c1a;
+            width: 20%;
+        }
+
+        .segment-5 {
+            background-color: #bb5f1a;
+            width: 30%;
+        }
+
+        /* TROPFEN Section */
+        .trophen {
+            background: linear-gradient(135deg, #151515 0%, #0a0a0a 50%, #151515 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trophen::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 80%, rgba(247, 147, 26, 0.05) 0%, transparent 60%);
+            z-index: 1;
+        }
+
+        .trophen-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .trophen-text {
+            flex: 1;
+            text-align: center;
+        }
+
+        .trophen-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #ccc;
+            text-align: justify;
+        }
+
+        .trophen-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .trophen-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            border: 2px solid rgba(247, 147, 26, 0.1);
+        }
+
+        .trophen-image img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(247, 147, 26, 0.2);
+        }
+
+        .value-props {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .value-prop {
+            background-color: var(--secondary-bg);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .value-prop-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* Final Urgency Section */
+        .urgency {
+            background-color: var(--white-bg);
+            position: relative;
+            overflow: hidden;
+            padding: 40px 0;
+        }
+
+        .urgency::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(247, 147, 26, 0.05) 0%, transparent 70%);
+            z-index: 1;
+        }
+
+        .footer-image-link {
+            display: block;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            text-decoration: none;
+        }
+
+        .footer-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .footer-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(247, 147, 26, 0.2);
+        }
+
+        .urgency .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .urgency h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--text-color);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .countdown-item {
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+            min-width: 100px;
+            text-align: center;
+        }
+
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #0a0a0a 0%, #000000 50%, #0a0a0a 100%);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 80% 20%, rgba(247, 147, 26, 0.03) 0%, transparent 60%);
+            z-index: 1;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-logo {
+            height: 50px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-copyright {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .progress-container {
+                width: 95%;
+            }
+
+            .narrative-content,
+            .trophen-content {
+                flex-direction: column;
+            }
+
+            .trophen-images {
+                flex-direction: column;
+            }
+
+            .nft-carousel {
+                height: 400px;
+                max-width: 90%;
+            }
+
+            .countdown {
+                flex-wrap: wrap;
+            }
+
+            .countdown-item {
+                min-width: 80px;
+                padding: 15px;
+            }
+
+            .countdown-number {
+                font-size: 1.5rem;
+            }
+
+            .benefits-content {
+                grid-template-columns: 1fr;
+            }
+
+            .price-table {
+                font-size: 0.9rem;
+            }
+
+            .price-table th, .price-table td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <img src="https://z-cdn-media.chatglm.cn/files/b589786b-cd6b-492d-9673-46970d3e5834_LOGOTIPO%20ALTERNATIVO%20-%20FONDO%20BLANCO.png?auth_key=1789770624-3c47f388312b4835bda60f0c38a608c1-0-5958bac7d2f681c192dcde9af177db8c" alt="TROPFEN Logo" class="logo">
+            <nav>
+                <ul style="display: flex; list-style: none; gap: 20px;">
+                    <li><a href="#whitepaper" style="text-decoration: none; color: #fff;">Whitepaper</a></li>
+                    <li><a href="#nft" style="text-decoration: none; color: #fff;">NFTs</a></li>
+                    <li><a href="#benefits" style="text-decoration: none; color: #fff;">Beneficios</a></li>
+                    <li><a href="#price-stages" style="text-decoration: none; color: #fff;">Rondas</a></li>
+                    <li><a href="#trophen" style="text-decoration: none; color: #fff;">TROPFEN</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Sólo 100 piezas únicas</h1>
+            
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 2%;"></div>
+                <div class="progress-text">2/100 vendidos</div>
+            </div>
+            
+            <div class="stock-info">
+                ¡Quedan 98 unidades disponibles!
+            </div>
+            
+            <a href="#" class="cta-button">Comprar ahora</a>
+        </div>
+    </section>
+
+    <!-- Whitepaper Section -->
+    <section class="whitepaper" id="whitepaper">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--white-text);">Whitepaper - BTC 100K</h2>
+            <div class="whitepaper-content">
+                <div class="whitepaper-text">
+                    <p style="color: var(--white-text);">Como <strong>Bitcoin</strong>, este anillo fue pensado con una emisión finita e inalterable: <strong>sólo 100 piezas serán creadas en toda la historia</strong>. Cada una representa una marca en el tiempo. Un testimonio físico de convicción digital. Un recordatorio de que quienes se posicionan primero, merecen más.</p>
+                    <p style="color: var(--white-text);">En el mundo de Bitcoin, la escasez no es un defecto. Es el <strong>origen del valor</strong>. El precio sube no porque alguien lo impone, sino porque más personas lo desean y menos pueden tenerlo.</p>
+                    <p style="color: var(--white-text);">El anillo BTC 100K funciona igual: <strong>a medida que se venden unidades, su valor sube. Es oferta y demanda en estado puro</strong>.</p>
+                    <p style="color: var(--white-text);">Los primeros 10 compradores serán reconocidos como los <strong>Founders</strong>. Además del valor de llegar primero, cuentan con beneficios exclusivos pensados para agradecer su apoyo inicial.</p>
+                </div>
+                <div class="whitepaper-image">
+                    <img src="https://z-cdn-media.chatglm.cn/files/97fe6e66-0413-44d6-8452-158f8fc8c930_ANILLO%20RENDERIZADO%20SIN%20FONDO.png?auth_key=1789624397-187be07d85974135bc9c9546e967902c-0-5ef21aa59546e2aab31caba315567e44" alt="Anillo BTC 100K">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NFT Section -->
+    <section class="nft-section" id="nft">
+        <div class="container">
+            <h2 class="section-title">NFT - Autenticidad on-chain</h2>
+            <div class="nft-content">
+                <p class="nft-description">Tu compra incluye un <strong>NFT coleccionable</strong> desarrollado en la red de Polygon, símbolo de autenticidad digital.</p>
+                
+                <div class="nft-carousel">
+                    <div class="nft-carousel-container">
+                        <div class="nft-item">
+                            <img src="https://z-cdn-media.chatglm.cn/files/97fe6e66-0413-44d6-8452-158f8fc8c930_ANILLO%20RENDERIZADO%20SIN%20FONDO.png?auth_key=1789624397-187be07d85974135bc9c9546e967902c-0-5ef21aa59546e2aab31caba315567e44" alt="NFT 1">
+                        </div>
+                        <div class="nft-item">
+                            <img src="https://z-cdn-media.chatglm.cn/files/97fe6e66-0413-44d6-8452-158f8fc8c930_ANILLO%20RENDERIZADO%20SIN%20FONDO.png?auth_key=1789624397-187be07d85974135bc9c9546e967902c-0-5ef21aa59546e2aab31caba315567e44" alt="NFT 2">
+                        </div>
+                        <div class="nft-item">
+                            <img src="https://z-cdn-media.chatglm.cn/files/97fe6e66-0413-44d6-8452-158f8fc8c930_ANILLO%20RENDERIZADO%20SIN%20FONDO.png?auth_key=1789624397-187be07d85974135bc9c9546e967902c-0-5ef21aa59546e2aab31caba315567e44" alt="NFT 3">
+                        </div>
+                        <div class="nft-item">
+                            <img src="https://z-cdn-media.chatglm.cn/files/97fe6e66-0413-44d6-8452-158f8fc8c930_ANILLO%20RENDERIZADO%20SIN%20FONDO.png?auth_key=1789624397-187be07d85974135bc9c9546e967902c-0-5ef21aa59546e2aab31caba315567e44" alt="NFT 4">
+                        </div>
+                        <div class="nft-item">
+                            <img src="https://z-cdn-media.chatglm.cn/files/97fe6e66-0413-44d6-8452-158f8fc8c930_ANILLO%20RENDERIZADO%20SIN%20FONDO.png?auth_key=1789624397-187be07d85974135bc9c9546e967902c-0-5ef21aa59546e2aab31caba315567e44" alt="NFT 5">
+                        </div>
+                        <div class="nft-item">
+                            <img src="https://z-cdn-media.chatglm.cn/files/97fe6e66-0413-44d6-8452-158f8fc8c930_ANILLO%20RENDERIZADO%20SIN%20FONDO.png?auth_key=1789624397-187be07d85974135bc9c9546e967902c-0-5ef21aa59546e2aab31caba315567e44" alt="NFT 6">
+                        </div>
+                        <div class="nft-item">
+                            <img src="https://z-cdn-media.chatglm.cn/files/97fe6e66-0413-44d6-8452-158f8fc8c930_ANILLO%20RENDERIZADO%20SIN%20FONDO.png?auth_key=1789624397-187be07d85974135bc9c9546e967902c-0-5ef21aa59546e2aab31caba315567e44" alt="NFT 7">
+                        </div>
+                        <div class="nft-item">
+                            <img src="https://z-cdn-media.chatglm.cn/files/97fe6e66-0413-44d6-8452-158f8fc8c930_ANILLO%20RENDERIZADO%20SIN%20FONDO.png?auth_key=1789624397-187be07d85974135bc9c9546e967902c-0-5ef21aa59546e2aab31caba315567e44" alt="NFT 8">
+                        </div>
+                        <div class="nft-item">
+                            <img src="https://z-cdn-media.chatglm.cn/files/97fe6e66-0413-44d6-8452-158f8fc8c930_ANILLO%20RENDERIZADO%20SIN%20FONDO.png?auth_key=1789624397-187be07d85974135bc9c9546e967902c-0-5ef21aa59546e2aab31caba315567e44" alt="NFT 9">
+                        </div>
+                        <div class="nft-item">
+                            <img src="https://z-cdn-media.chatglm.cn/files/97fe6e66-0413-44d6-8452-158f8fc8c930_ANILLO%20RENDERIZADO%20SIN%20FONDO.png?auth_key=1789624397-187be07d85974135bc9c9546e967902c-0-5ef21aa59546e2aab31caba315567e44" alt="NFT 10">
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="nft-microcopy">Un anillo. Un NFT. Una historia grabada para siempre en la blockchain.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <h2 class="section-title">Beneficios Founder</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">Los primeros 10 compradores serán reconocidos como FOUNDERS. Además del mejor precio, recibirán beneficios exclusivos.</p>
+            
+            <div class="benefits-content">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-percentage"></i></div>
+                    <h3>20% OFF</h3>
+                    <p>Sobre el precio de lista</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-coins"></i></div>
+                    <h3>NFT especial "Founder"</h3>
+                    <p>En la red de Polygon</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-shipping-fast"></i></div>
+                    <h3>Envío gratis</h3>
+                    <p>A todo el país</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>Certificado físico</h3>
+                    <p>Numerado y firmado</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-gift"></i></div>
+                    <h3>Packaging especial</h3>
+                    <p>"Founder Edition"</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-star"></i></div>
+                    <h3>Cupón de 10% OFF</h3>
+                    <p>En cualquier otro anillo de la tienda</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-tags"></i></div>
+                    <h3>Stickers premium</h3>
+                    <p>Edición exclusiva</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-palette"></i></div>
+                    <h3>Diseño personalizado</h3>
+                    <p>Acceso exclusivo al servicio</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Stages Section -->
+    <section class="price-stages" id="price-stages">
+        <div class="container">
+            <h2 class="section-title">Más demanda, menos oferta, más valor.</h2>
+            <div class="price-stages-content">
+                <p class="price-stages-description">El valor del Anillo BTC 100K aumenta con cada ronda completada, reflejando el principio fundamental de Bitcoin: <strong>la escasez crea valor</strong>. Las rondas reconocen la decisión temprana y recompensan a quienes confían primero.</p>
+                
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Etapa</th>
+                            <th>Anillos</th>
+                            <th>Precio de lista</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Etapa 1</td>
+                            <td>#1–#10</td>
+                            <td>$100.000</td>
+                        </tr>
+                        <tr>
+                            <td>Etapa 2</td>
+                            <td>#11–#30</td>
+                            <td>$120.000</td>
+                        </tr>
+                        <tr>
+                            <td>Etapa 3</td>
+                            <td>#31–#50</td>
+                            <td>$150.000</td>
+                        </tr>
+                        <tr>
+                            <td>Etapa 4</td>
+                            <td>#51–#70</td>
+                            <td>$200.000</td>
+                        </tr>
+                        <tr>
+                            <td>Etapa 5</td>
+                            <td>#71–#100</td>
+                            <td>$250.000</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="price-chart-container">
+                    <img src="https://z-cdn-media.chatglm.cn/files/eaa23533-1b58-4daf-9a78-18e0bf8fb438_GRAFICO%20DE%20ETAPAS.png?auth_key=1789626944-7124d60dc41e4549841dccfd9ebadeca-0-a57cf69be5bf3eed30fa15ce093e71db" alt="Gráfico de Etapas" class="price-chart">
+                </div>
+                
+                <a href="#" class="cta-button">Más información</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TROPFEN Section -->
+    <section class="trophen" id="trophen">
+        <div class="container">
+            <h2 class="section-title">TROPFEN</h2>
+            <div class="trophen-content">
+                <div class="trophen-image">
+                    <img src="https://z-cdn-media.chatglm.cn/files/b589786b-cd6b-492d-9673-46970d3e5834_LOGOTIPO%20ALTERNATIVO%20-%20FONDO%20BLANCO.png?auth_key=1789770624-3c47f388312b4835bda60f0c38a608c1-0-5958bac7d2f681c192dcde9af177db8c" alt="TROPFEN Logo">
+                </div>
+                <div class="trophen-text">
+                    <p><strong>Cada anillo BTC 100K se realiza a la medida exacta de tu dedo</strong>. Si el calce no queda perfecto, contás con nuestra garantía de ajuste: lo reducimos o lo ampliamos hasta lograr el calce ideal. Vas a recibir un anillo fundido en <strong>plata 925</strong> pura, con todas las <strong>terminaciones pulidas a mano</strong> y con <strong>grabado interior</strong>, <strong>"100K"</strong>, que sella el hito y certifica la autenticidad de una edición limitada creada bajo los altos estándares de calidad de <strong>TROPFEN</strong>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Urgency Section -->
+    <section class="urgency">
+        <div class="container">
+            <a href="#" class="footer-image-link">
+                <img src="https://z-cdn-media.chatglm.cn/files/72ad1666-1ea3-4cdf-8110-5f0881bc5053_FOOTER%20WEB.png?auth_key=1789770624-f147149bf162451c95ac42df0697b1e6-0-353c9f19dc99457a644af65081b304a9" alt="Últimas piezas" class="footer-image">
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <img src="https://z-cdn-media.chatglm.cn/files/a332088e-ec22-44e9-93d1-2ae828ed432a_LOGO%20PRINCIPAL%20-%20FONDO%20BLANCO.JPEG?auth_key=1789624397-6fc217221c0849828072db42e1015054-0-3b8c15b0d06e905a29730c687cbf9042" alt="TROPFEN Logo" class="footer-logo">
+            <div class="footer-links">
+                <a href="#">Términos y Condiciones</a>
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Preguntas Frecuentes</a>
+                <a href="#">Contacto</a>
+            </div>
+            <p class="footer-copyright">© 2023 TROPFEN. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
