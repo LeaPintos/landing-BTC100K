@@ -784,23 +784,32 @@
   .br-mobile{ display:inline; }
   .section-title--stages{ line-height:1.25; }
 }
-/* --- Tabla prolija: columnas iguales, centrado, misma altura --- */
+/* Tabla prolija: columnas iguales, centrado */
 .price-table{
-  table-layout: fixed; /* columnas iguales */
-  width:100%;
+  table-layout: fixed;
+  width: 100%;
 }
 .price-table th,
 .price-table td{
-  text-align:center;
-  width:33.333%;
-  vertical-align:middle;
-  padding:12px 10px;
-  height:48px;          /* misma altura para todas */
-  white-space:nowrap;   /* evita doble renglón en etapas 4 y 5 */
+  text-align: center;
+  width: 33.333%;
+  vertical-align: middle;
+  padding: 12px 10px;
+  height: 48px;
 }
+
+/* 👉 Solo las celdas (td) sin salto. El header (th) sí puede partirse */
+.price-table td{ white-space: nowrap; }
+.price-table th{
+  white-space: normal;        /* permite 2 líneas */
+  word-break: break-word;     /* si hace falta, corta palabras largas */
+  line-height: 1.2;
+}
+
+/* Mobile tweaks */
 @media (max-width: 768px){
-  .price-table{ font-size:0.95rem; }
-  .price-table th, .price-table td{ padding:10px 8px; height:44px; }
+  .price-table th{ font-size: 0.95rem; padding: 10px 6px; }
+  .price-table td{ font-size: 1rem;   padding: 10px 6px; height: 44px; }
 }
     </style>
 </head>
@@ -986,7 +995,7 @@
                 </table>
                 
                 <div class="price-chart-container">
-                    <img src="https://z-cdn-media.chatglm.cn/files/eaa23533-1b58-4daf-9a78-18e0bf8fb438_GRAFICO%20DE%20ETAPAS.png?auth_key=1789626944-7124d60dc41e4549841dccfd9ebadeca-0-a57cf69be5bf3eed30fa15ce093e71db" alt="Gráfico de Etapas" class="price-chart">
+                    <img src="landing-BTC100K/GRAFICO DE ETAPAS 3.png" alt="Gráfico de Etapas 3" class="price-chart">
                 </div>
                 
                 <a href="https://tropfenshop.com.ar/productos/anillobtc/" class="cta-button" target="_blank" rel="noopener noreferrer">Más información</a>
