@@ -786,7 +786,7 @@
                 ¡Quedan 98 unidades disponibles!
             </div>
             
-            <a href="https://tropfenshop.com.ar/productos/anillobtc/" class="cta-button">Comprar ahora</a>
+            <a href="https://tropfenshop.com.ar/productos/anillobtc/" class="cta-button" target="_blank" rel="noopener noreferrer">Comprar ahora</a>
         </div>
     </section>
 
@@ -933,7 +933,7 @@
                     <img src="https://z-cdn-media.chatglm.cn/files/eaa23533-1b58-4daf-9a78-18e0bf8fb438_GRAFICO%20DE%20ETAPAS.png?auth_key=1789626944-7124d60dc41e4549841dccfd9ebadeca-0-a57cf69be5bf3eed30fa15ce093e71db" alt="Gráfico de Etapas" class="price-chart">
                 </div>
                 
-                <a href="https://tropfenshop.com.ar/productos/anillobtc/" class="cta-button">Más información</a>
+                <a href="https://tropfenshop.com.ar/productos/anillobtc/" class="cta-button" target="_blank" rel="noopener noreferrer">Más información</a>
             </div>
         </div>
     </section>
@@ -956,7 +956,7 @@
     <!-- Final Urgency Section -->
     <section class="urgency">
         <div class="container">
-            <a href="https://tropfenshop.com.ar/productos/anillobtc/" class="footer-image-link">
+            <a href="https://tropfenshop.com.ar/productos/anillobtc/" class="footer-image-link" target="_blank" rel="noopener noreferrer">
                 <img src="FOOTER WEB.png" alt="Últimas piezas" class="footer-image">
             </a>
         </div>
@@ -976,17 +976,32 @@
         </div>
     </footer>
 
-   <!-- JS: smooth scroll para el menú -->
   <script>
-    document.addEventListener('click', (e) => {
-      const a = e.target.closest('a[href^="#"]');
-      if(!a) return;
-      const el = document.querySelector(a.getAttribute('href'));
-      if(!el) return;
+  // Scroll suave SOLO para anclas internas (#) del MISMO documento
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a');
+    if (!a) return;
+
+    // Normalizá URL destino
+    const url = new URL(a.getAttribute('href'), location.href);
+
+    // Si es un link EXTERNO (otro dominio/origen) -> no tocar
+    if (url.origin !== location.origin) return;
+
+    // Si no tiene hash (#) -> es navegación normal interna -> no tocar
+    if (!url.hash) return;
+
+    // Si el hash apunta a un elemento de ESTA página -> scroll suave
+    const target = document.querySelector(url.hash);
+    if (target && url.pathname === location.pathname) {
       e.preventDefault();
-      window.scrollTo({top: el.offsetTop - 80, behavior:'smooth'});
-    });
-  </script>
+      window.scrollTo({
+        top: target.offsetTop - 80,
+        behavior: 'smooth'
+      });
+    }
+  });
+</script>
 
   <!-- JS: carrusel NFT sin cortes (loop real) -->
   <script>
