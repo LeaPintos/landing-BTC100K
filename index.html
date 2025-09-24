@@ -811,6 +811,25 @@
   .price-table th{ font-size: 0.95rem; padding: 10px 6px; }
   .price-table td{ font-size: 1rem;   padding: 10px 6px; height: 44px; }
 }
+/* Por defecto mostramos solo escritorio */
+.footer-desktop {
+  display: block;
+}
+
+.footer-mobile {
+  display: none;
+}
+
+/* En pantallas chicas mostramos el footer mobile */
+@media (max-width: 768px) {
+  .footer-desktop {
+    display: none;
+  }
+
+  .footer-mobile {
+    display: block;
+  }
+}
     </style>
 </head>
 <body>
@@ -995,7 +1014,7 @@
                 </table>
                 
                 <div class="price-chart-container">
-                    <img src="landing-BTC100K/GRAFICO DE ETAPAS 3.png" alt="Gráfico de Etapas 3" class="price-chart">
+                    <img src="GRAFICO DE ETAPAS 3.png" alt="Gráfico de Etapas 3" class="price-chart">
                 </div>
                 
                 <a href="https://tropfenshop.com.ar/productos/anillobtc/" class="cta-button" target="_blank" rel="noopener noreferrer">Más información</a>
@@ -1019,13 +1038,19 @@
     </section>
 
     <!-- Final Urgency Section -->
-    <section class="urgency">
-        <div class="container">
-            <a href="https://tropfenshop.com.ar/productos/anillobtc/" class="footer-image-link" target="_blank" rel="noopener noreferrer">
-                <img src="FOOTER WEB.png" alt="Últimas piezas" class="footer-image">
-            </a>
-        </div>
-    </section>
+<section class="urgency">
+  <div class="container">
+    <a href="https://tropfenshop.com.ar/productos/anillobtc/" 
+       class="footer-image-link" target="_blank" rel="noopener noreferrer">
+       
+      <!-- Versión escritorio -->
+      <img src="FOOTER WEB.png" alt="Últimas piezas" class="footer-image footer-desktop">
+
+      <!-- Versión mobile -->
+      <img src="FOOTER MOBILE.png" alt="Últimas piezas" class="footer-image footer-mobile">
+    </a>
+  </div>
+</section>
 
     <!-- Footer -->
     <footer>
