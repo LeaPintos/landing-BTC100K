@@ -830,6 +830,23 @@
     display: block;
   }
 }
+
+.founder-note {
+  text-align: center;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #bbb; /* gris suave para no competir con los títulos */
+  margin: 20px auto 40px auto;
+  max-width: 90%;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .founder-note {
+    font-size: 0.85rem;
+    margin: 15px auto 30px auto;
+  }
+}
     </style>
 </head>
 <body>
@@ -958,10 +975,14 @@
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon"><i class="fas fa-palette"></i></div>
-                    <h3>Diseño personalizado</h3>
+                    <h3>Diseño personalizado *</h3>
                     <p>Acceso exclusivo al servicio</p>
                 </div>
             </div>
+            <!-- Nota aclaratoria diseño personalizado -->
+<div class="founder-note">
+  <p>* Oportunidad de diseñar y crear tu propio anillo junto al equipo TROPFEN.</p>
+</div>
         </div>
     </section>
 
